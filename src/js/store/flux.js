@@ -44,9 +44,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (data.contacts)
 						setStore({ ...getStore(), contacts: data.contacts });
 
+					console.log("getAllContacts")
+					console.log(response.ok)
+
 					// Si agenda no existe, se crea una nueva con el valor de mi slug
 					if (!response.ok) {
-						actions.reateMyAgendaUser();
+						createMyAgendaUser();
 					}
 
 				} catch (error) {
